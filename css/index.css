@@ -1,0 +1,511 @@
+@import url(common.css);
+
+body{
+  background:rgb(236, 236, 236);
+}
+
+/* _______________________________header */
+
+/* 탑 배경 및 로고 */
+header{
+  width:100%;
+  height:400px;
+  /* background-color:blueviolet; */
+  margin:0 auto;
+}
+
+header .topImg{
+  width:100%;
+  height:300px;
+  filter:sepia(30%);
+  background:url(../image/topBg02.png) center center no-repeat;
+  position:relative
+}
+
+header .topImg .logo{
+  text-align:center;
+  padding-top:50px;
+  max-width:100%;
+  max-height:100%;
+}
+header .topImg .logo img{
+  width:300px;
+  height:100px;
+}
+
+/* 네비게이션바 및 서치영역 */
+
+header nav{
+  width:100%;
+  height:100px;
+  background-color:#96724a;
+}
+header nav .navIn{
+  width:1200px;
+  height:100px;
+  margin:0 auto;
+  position:relative;
+  text-align:center;
+}
+
+header nav .navIn ul li{
+  font-family:'BIZ UDGothic', sans-serif;
+  width:150px;
+  height:100px;
+  float:left;
+  line-height:100px;
+  padding:0 10px;
+  
+}
+header nav .navIn ul li a{
+  display:block;
+  font-size:20px;
+  transition:all 0.4s;
+}
+header nav .navIn ul li:hover a{
+  background:#735D44;
+  font-weight:bold;
+  cursor:pointer; 
+}
+
+header nav .search{
+  float:right;
+  line-height:100px;
+}
+header nav .search .material-icons{
+  vertical-align:middle;
+  font-size:30px;
+  opacity:0.7;
+}
+
+/* ★input search 꾸미기 */
+
+input[type=search]{
+  height:25px;
+  padding:0 10px;
+  border:0;
+  border-radius:20px;
+  background-color:antiquewhite;
+}
+
+/* _______________________________mainVisual */
+
+/* .mainVisual{  메인비주얼 초안
+  width:100%;
+  height:540px;
+  margin-top:30px;
+  background:url(/image/mainVisual-crop.jpg) center center no-repeat;
+} */ 
+
+/* 메인비주얼 이미지슬라이드 적용  
+  참고 : https://blogpack.tistory.com/814 */
+
+.mainVisual{
+  width:960px;
+  height:540px;
+  position:relative;
+  margin:20px auto;
+}
+.mainVisual input[type=radio]{
+  display:none;
+}
+.mainVisual ul.imgs li{
+  position:absolute;
+  opacity:0; /* 체크한 라디오박스 순서의 이미지만 보이도록 기본 투명도 */
+  list-style:none;
+}
+
+/* 밑에 불릿들 효과 */
+
+.bullets{
+  position:absolute;
+  left:50%;
+  transform:translateX(-50%);
+  bottom:10px;
+  z-index:2;
+}
+.bullets label{
+  display:inline-block; /* 불릿 한 줄로 나열하기위해 */
+  border-radius:50%;
+  background-color:rgba(150, 114, 74, 0.75);
+  width:20px;
+  height:20px;
+  cursor:pointer;
+}
+.mainVisual input[type=radio]:nth-child(1):checked~.bullets>label:nth-child(1){background:#fff;}
+.mainVisual input[type=radio]:nth-child(2):checked~.bullets>label:nth-child(2){background:#fff;}
+.mainVisual input[type=radio]:nth-child(3):checked~.bullets>label:nth-child(3){background:#fff;}
+.mainVisual input[type=radio]:nth-child(4):checked~.bullets>label:nth-child(4){background:#fff;}
+
+/* 슬라이드 전환 효과 */
+
+.mainVisual input[type=radio]:nth-child(1):checked~ul.imgs>li:nth-child(1){
+  opacity:1;
+  transition:1s;
+  z-index:1;
+}
+.mainVisual input[type=radio]:nth-child(2):checked~ul.imgs>li:nth-child(2){
+  opacity:1;
+  transition:1s;
+  z-index:1;
+}
+.mainVisual input[type=radio]:nth-child(3):checked~ul.imgs>li:nth-child(3){
+  opacity:1;
+  transition:1s;
+  z-index:1;
+}
+.mainVisual input[type=radio]:nth-child(4):checked~ul.imgs>li:nth-child(4){
+  opacity:1;
+  transition:1s;
+  z-index:1;
+}
+ul.imgs li{
+  position: absolute;
+  opacity: 0;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  transition-delay: 0.9s; /* 트랜지션 지연 시간 지정 */
+}
+
+/* _______________________________Section1_whisky */
+
+section h3{
+  text-align:center;
+  font-family:'BIZ UDGothic', sans-serif;
+  font-size:50px;
+  color:#735D44;
+  padding-top:50px;
+}
+section #whisky .whiskyText{
+  width:1200px;
+  font-size:18px;
+  line-height:50px;
+  text-align:center;
+  margin:50px auto 0;
+  color:#666;
+}
+section #whisky>p>span{
+  font-weight:bold;
+  color:#333;
+}
+
+section .whiskyImgs{
+  padding:50px;
+  height:830px;
+  background:#BFB0A3;
+}
+section .whiskyImgsIn{
+  /* background-color:pink; */
+  margin:0 auto;
+  width:1280px;
+}
+section .whiskyImgs ul{
+  display:inline-block;
+  margin:0 auto;
+} 
+section .whiskyImgs ul li{
+  float:left;
+  margin:0 10px;
+  position:relative;
+  overflow:hidden;
+} 
+
+section .whiskyImgs ul li img{
+  width:300px;
+  height:400px;
+  margin-top:10px;
+  transition:all 0.5s ease-in;
+}
+
+section .whiskyImgs .whiskyImgsIn ul li .whisky1{
+  background:rgba(115, 93, 68, 0.75);
+  width:300px;
+  height:400px;
+  opacity:0;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  transition:all 0.5s ease-in;
+  font-size:20px;
+  font-weight:bold;
+  color:antiquewhite;
+  position:absolute;
+  margin-top:10px;
+}
+
+/* whiskyImg hover_____ */
+
+section .whiskyImgs .whiskyImgsIn ul li:hover .whisky1{
+  opacity:1;
+  cursor:pointer;
+}
+
+
+/* _______________________________Section2_about */
+
+
+#about .aboutIn{
+  width:100%;
+  height:500px;
+  /* background-color:pink; */
+}
+#about .aboutIn ul{
+  width:1500px;
+  height:500px;
+  /* background-color:blue; */
+  margin:0 auto;
+}
+
+#about ul li{
+  width:300px;
+  height:300px;
+  border:none;
+  border-radius:50%;
+  float:left;
+  margin:50px 37px;
+}
+
+/* @keyframes hover1{
+  0%{transform:rotate(60deg);}
+  25%{transform:rotate(120deg);}
+  50%{transform:rotate(180deg);}
+  75%{transform:rotate(240deg);}
+  100%{}
+} */
+
+/* 나중에 애니메이션도 시도해볼 예정!★★★★★★
+1번이미지 작아지면서 2번이미지 커지면서 나오는걸로 */
+
+
+/* about hover 효과___________ */
+#about ul li:nth-child(1){
+  background:url(../image/ourHistory02.png);
+  transition:all 0.8s;
+}
+#about ul li:nth-child(1):hover{
+  cursor:pointer;
+  transform:rotate(360deg);
+  background:url(../image/ourHistory01.png);
+}
+
+#about ul li:nth-child(2){
+  background:url(../image/islay01.png);
+  transition:all 0.8s;
+}
+#about ul li:nth-child(2):hover{
+  cursor:pointer;
+  transform:rotate(360deg);
+  background:url(../image/islay02.png);
+}
+
+#about ul li:nth-child(3){
+  background:url(../image/people01.png);
+  transition:all 0.8s;
+}
+#about ul li:nth-child(3):hover{
+  cursor:pointer;
+  transform:rotate(360deg);
+  background:url(../image/people02.png);
+}
+
+#about ul li:nth-child(4){
+  background:url(../image/process01.png);
+  transition:all 0.8s;
+}
+#about ul li:nth-child(4):hover{
+  cursor:pointer;
+  transform:rotate(360deg);
+  background:url(../image/process02.png);
+}
+
+/* #about ul li .textbox{
+  display:inline;
+  width:300px;
+  height:30px;
+  background-color:rgba(0,0,0,0.3);
+  position:relative;
+  margin:0 auto;
+} 
+★★★★★★★★★★★★★★★이거부터★★★★★★★★★★★★★★★★★★★★★★★★★★★★*/ 
+
+#about ul li>p{
+  text-align:center;
+  line-height:300px;
+  margin:0 auto;
+  font-weight:bold;
+  font-size:30px;
+  color:#fff;
+}
+
+
+/* _______________________________Section3_committee */
+
+#committee{
+  width:100%;
+  height:800px;
+  margin-bottom:50px;
+}
+
+#committee .com{
+  /* background-color: pink; */
+  width:1000px;
+  height:700px;
+  margin:0 auto;
+  position:relative;
+}
+#committee .com img{
+  width:100%;
+  height:100%;
+  margin-top:20px;
+}
+
+#committee .com .comVisual{
+  width:100%;
+  height:0;
+  position:absolute;
+  background:rgba(11, 70, 14, 0.7);
+  transition:all 0.8s ease-out;
+  transition-timing-function:cubic-bezier(.53,1.32,.71,.21);
+  margin-top:20px;
+  border:none;
+  border-radius:0 0 50px 50px;
+}
+#committee .com:hover .comVisual{
+  opacity:1;
+  height:60%;
+}
+#committee .com .comVisual .comText{
+  text-align:center;
+  opacity:0;
+  transition:all 0.5s ease-out;
+  color:#000;
+  font-size:30px;
+}
+#committee .com:hover .comVisual .comText{
+  opacity:1;
+}
+
+.comText li:nth-child(1){
+  margin:30px 0;
+  font-weight:bold;
+}
+
+.comText .btn{
+  display:inline-block;
+  border:2px solid #000;
+  border-radius:20px;
+  padding:0 10px;
+  margin-top:50px;
+  transition:all 0.5s;
+}
+.comText .btn:hover{
+  background:#31e62d;
+  cursor:pointer;
+}
+
+/* _______________________________Section4_events */
+
+#events{
+  width:100%;
+  height:700px;
+  /* background-color:pink; */
+}
+#events .eventIn{
+  width:1200px;
+  height:300px;
+  margin:0 auto;
+}
+#events ul{
+  margin-top:30px;
+  text-align:center;
+  background-color:magenta;
+}
+#events ul li{
+  width:300px;
+  height:500px;
+  float:left;
+  overflow:hidden;
+  position:relative;
+}
+
+#events ul li img{
+  transform:scale(1);
+  transition:all 0.5s;
+}
+#events ul li:hover img{
+  transform:scale(1.2);
+  filter:blur(4px);
+  cursor:pointer;
+}
+#events ul li .eventText{
+  font-weight:bold;
+  position:absolute;
+  top:30px;
+  left:5px;
+  font-size:20px;
+  text-align:center;
+  border-bottom:1px solid #000;;
+  color:#000;
+  opacity:0;
+  z-index:100;
+  transition:all 0.5s;
+} 
+#events ul li:hover .eventText{
+  opacity:1;
+  font-size:25px;
+  border-bottom:3px solid #000;;
+}
+
+
+
+/* _______________________________footer */
+
+footer{
+  width:100%;
+  height:400px;
+  background:#735D44;
+  margin-top:30px;
+
+}
+
+footer .footerIn{
+  width:900px;
+  height:100%;
+  margin:0 auto;
+  background:url(../image/logo01.png) no-repeat center bottom;
+  position:relative;
+}
+footer .footerIn .footer1{
+  display:inline-block;
+  position:absolute;
+  margin:50px 0;
+  /* background-color:magenta; */
+}
+footer .footerIn ul{
+  /* display:inline-block; */
+  width:300px;
+  height:200px;
+  float:left;
+  line-height:25px;
+  text-align:center;
+}
+
+/* TOP버튼 */
+
+#top_btn{  /* 위치설정 */
+  position:fixed;
+  right:0;
+  bottom:0;
+  z-index:1000;
+}
+#top_btn a.active{ /* 버튼설정 */
+  display:block;
+  width:60px;
+  height:60px;
+  background:url(../image/top.png) no-repeat;
+  transition:all 0.3s;
+}
+#top_btn a.active:hover{
+  background:url(../image/top_on01.png) no-repeat;
+}
